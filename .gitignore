@@ -1,3 +1,8 @@
+# yarn files
+.yarn/install-state.gz
+.yarn-integrity
+.yarn/*
+
 # Ignore React specific files
 .DS_STORE
 node_modules
@@ -107,9 +112,6 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
-
-# Yarn Integrity file
-.yarn-integrity
 
 # dotenv environment variables file
 .env
