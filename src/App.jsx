@@ -1,27 +1,30 @@
 import React, { useState, useCallback } from "react";
 import NavMenu from "./components/NavMenu";
-// import QueryForm from "./components/QueryForm";
-// import Canvas from "./components/Canvas";
+import QueryForm from "./components/QueryForm";
+import Canvas from "./components/Canvas";
+
 import "./assets/App.css";
 
 const App = () => {
   const [data, setData] = useState(null);
-  const [chosenChart, setChosenChart] = useState("Graph (Vis-Network)");
+  const [chosenChart, setChosenChart] = useState("Network Diagram");
   const [chosenTopic, setChosenTopic] = useState("Computer Science");
-  const [chosenProperty, setChosenProperty] = useState("Subclass of");
 
   const onQuerySubmit = useCallback(
-    (resource, chart, chosenTopic, chosenProperty) => {
+    (resource, chart, topic) => {
       setData(resource);
       setChosenChart(chart);
-      setChosenTopic(chosenTopic);
-      setChosenProperty(chosenProperty);
+      setChosenTopic(topic);
     },
-    [setData, setChosenChart, setChosenTopic, setChosenProperty]
+    [setData, setChosenChart, setChosenTopic]
   );
 
   return (
+    <>
       <NavMenu />
+      <QueryForm onQuerySubmit={onQuerySubmit} />
+      <Canvas data={data} chosenChart={chosenChart} chosenTopic={chosenTopic} />
+    </>
   );
 };
 

@@ -6,11 +6,15 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vis-data": "^7.1.4",
+    "vis-network": "^9.1.2"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html",
+    "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html"
   }
 }
